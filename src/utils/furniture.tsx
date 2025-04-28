@@ -1,12 +1,22 @@
 import { PivotControls } from "@react-three/drei";
 
-export const FurnitureWrapper = ({ scale = 1, lineWidth = 3, ...props }) => {
+export const FurnitureWrapper = ({
+  anchor = [0, 0, 0],
+  scale = 0.7,
+  lineWidth = 3,
+  ...props
+}: {
+  anchor: [number, number, number];
+  scale: number;
+  lineWidth: number;
+}) => {
   return (
     <PivotControls
       {...props}
-      anchor={[1, 1, 0]}
+      anchor={anchor}
       scale={scale}
       lineWidth={lineWidth}
+      // depthTest={true}
     />
   );
 };
