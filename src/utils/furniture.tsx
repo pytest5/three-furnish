@@ -6,9 +6,9 @@ export const FurnitureWrapper = ({
   lineWidth = 3,
   ...props
 }: {
-  anchor: [number, number, number];
-  scale: number;
-  lineWidth: number;
+  anchor?: [number, number, number];
+  scale?: number;
+  lineWidth?: number;
 }) => {
   return (
     <PivotControls
