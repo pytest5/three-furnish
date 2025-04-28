@@ -21,7 +21,7 @@ function App() {
         scale={6}
         rotation={[-Math.PI * 0.5, 0, 0]}
       >
-        <circleGeometry />
+        <circleGeometry args={[1, 160]} />
         {/* <meshStandardMaterial color="grey" side={DoubleSide} /> */}
         <MeshReflectorMaterial
           blur={[1000, 1000]}
