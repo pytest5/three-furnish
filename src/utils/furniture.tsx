@@ -9,6 +9,7 @@ export const FurnitureWrapper = ({
   anchor?: [number, number, number];
   scale?: number;
   lineWidth?: number;
+  children: React.ReactNode;
 }) => {
   return (
     <PivotControls
