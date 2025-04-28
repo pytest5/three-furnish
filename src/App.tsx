@@ -37,7 +37,7 @@ function App() {
       <OrbitControls makeDefault />
       <Bed position={[4, -0.7, 1]} rotation={[0, -Math.PI * 0.2, 0]} />
       <Bench
-        position={[2.5, -1, 2.0]}
+        position={[2.6, -1, 2.2]}
         rotation={[0, -Math.PI * 0.2, 0]}
         scale={[1.5, 1, 1]}
       />
