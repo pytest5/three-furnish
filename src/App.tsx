@@ -16,10 +16,6 @@ import { Plant } from "./components/Plant";
 import { useControls } from "leva";
 
 function App() {
-  const { pivotControls } = useControls({
-    pivotControls: { options: ["True", "False"] },
-  });
-
   return (
     <Canvas camera={{ fov: 70, near: 0.1, far: 1000, position: [2, 5, 10] }}>
       <ambientLight intensity={3.1} />
@@ -93,12 +89,9 @@ function App() {
         >
           <BigText />
         </SuspenseWrapper>
-
-        <Plant position={[0.8, -0.85, 4.5]} scale={0.5} />
-
-        {/* <FurnitureWrapper>
-          <Witch />
-        </FurnitureWrapper> */}
+        <SuspenseWrapper position={[0.8, -0.85, 4.5]} scale={0.5}>
+          <Plant position={[0.8, -0.85, 4.5]} scale={0.5} />
+        </SuspenseWrapper>
       </group>
     </Canvas>
   );
