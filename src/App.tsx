@@ -72,9 +72,9 @@ function App() {
         </SuspenseWrapper>
         <SuspenseWrapper position={[-1, -0.5, 1]} scale={[1, 1, 2]}>
           <TableModern
-            position={[-1, -1.3, 1]}
+            position={[-1, -1.2, 1]}
             rotation={[0, Math.PI / 2, 0]}
-            scale={0.7}
+            scale={0.65}
           />
         </SuspenseWrapper>
         <SuspenseWrapper
