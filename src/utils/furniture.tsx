@@ -2,7 +2,7 @@ import { PivotControls } from "@react-three/drei";
 
 export const FurnitureWrapper = ({
   anchor = [0, 0, 0],
-  scale = 0.7,
+  scale = 0.8,
   lineWidth = 3,
   ...props
 }: {
@@ -17,7 +17,9 @@ export const FurnitureWrapper = ({
       anchor={anchor}
       scale={scale}
       lineWidth={lineWidth}
-      // depthTest={true}
+      depthTest={false}
+      axisColors={["#9381ff", "#ff4d6d", "#7ae582"]}
+      // fixed={true}
     />
   );
 };
