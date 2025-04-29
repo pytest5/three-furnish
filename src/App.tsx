@@ -7,10 +7,19 @@ import { Bookcase } from "./components/Bookcase";
 import { BookcaseWide } from "./components/BookcaseWide";
 import { Chair } from "./components/Chair";
 import { Desk } from "./components/Desk";
-import { Table } from "./components/Table";
+import { Table, TableModern } from "./components/TableModern";
 import { BigText } from "./components/BigText";
+import { SuspenseWrapper } from "./components/SuspenseWrapper";
+import { Witch } from "./components/Witch";
+import { FurnitureWrapper } from "./utils/furniture";
+import { Plant } from "./components/Plant";
+import { useControls } from "leva";
 
 function App() {
+  const { pivotControls } = useControls({
+    pivotControls: { options: ["True", "False"] },
+  });
+
   return (
     <Canvas camera={{ fov: 70, near: 0.1, far: 1000, position: [2, 5, 10] }}>
       <ambientLight intensity={3.1} />
@@ -33,18 +42,63 @@ function App() {
             roughness={0.3}
           />
         </mesh>
-
         <OrbitControls makeDefault />
-        <Bed position={[4, -0.7, 1]} rotation={[0, -Math.PI * 0.2, 0]} />
-        <Bench
-          position={[2.6, -1, 2.2]}
+        <SuspenseWrapper
+          position={[4, -0.5, 1]}
           rotation={[0, -Math.PI * 0.2, 0]}
-          scale={[1.5, 1, 1]}
-        />
-        <Bookcase position={[0, -1, -1]} scale={1} rotation={[0, Math.PI, 0]} />
-        <Chair position={[0, -1, 1]} rotation={[0, -Math.PI / 2, 0]} />
-        <Desk position={[3, -31.9, 1]} />
-        <BigText />
+          scale={[2.5, 1, 2.5]}
+        >
+          <Bed position={[4, -0.7, 1]} rotation={[0, -Math.PI * 0.2, 0]} />
+        </SuspenseWrapper>
+        <SuspenseWrapper
+          position={[2.8, -0.5, 2.6]}
+          rotation={[0, -Math.PI * 0.2, 0]}
+          scale={[2, 1, 1]}
+        >
+          <Bench
+            position={[2.6, -1, 2.2]}
+            rotation={[0, -Math.PI * 0.2, 0]}
+            scale={[1.5, 1, 1]}
+          />
+        </SuspenseWrapper>
+
+        <SuspenseWrapper
+          position={[0, -0.5, -1]}
+          scale={[1, 3, 1]}
+          rotation={[0, Math.PI, 0]}
+        >
+          <Bookcase
+            position={[0, -1, -1]}
+            scale={1}
+            rotation={[0, Math.PI, 0]}
+          />
+        </SuspenseWrapper>
+        <SuspenseWrapper
+          position={[0, -0.5, 1]}
+          rotation={[0, -Math.PI / 2, 0]}
+        >
+          <Chair position={[0, -1, 1]} rotation={[0, -Math.PI / 2, 0]} />
+        </SuspenseWrapper>
+        <SuspenseWrapper position={[-1, -0.5, 1]} scale={[1, 1, 2]}>
+          <TableModern
+            position={[-1, -1.3, 1]}
+            rotation={[0, Math.PI / 2, 0]}
+            scale={0.7}
+          />
+        </SuspenseWrapper>
+        <SuspenseWrapper
+          position={[3, 4.5, 1]}
+          scale={[4, 2, 1]}
+          rotation={[-0.3, -0.35, 0]}
+        >
+          <BigText />
+        </SuspenseWrapper>
+
+        <Plant position={[0.8, -0.85, 4.5]} scale={0.5} />
+
+        {/* <FurnitureWrapper>
+          <Witch />
+        </FurnitureWrapper> */}
       </group>
     </Canvas>
   );
