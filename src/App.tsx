@@ -1,19 +1,14 @@
-import { MeshReflectorMaterial, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { DoubleSide } from "three";
 import { Bench } from "./components/Bench";
 import { Bed } from "./components/Bed";
 import { Bookcase } from "./components/Bookcase";
-import { BookcaseWide } from "./components/BookcaseWide";
 import { Chair } from "./components/Chair";
-import { Desk } from "./components/Desk";
-import { Table, TableModern } from "./components/TableModern";
+import { TableModern } from "./components/TableModern";
 import { BigText } from "./components/BigText";
 import { SuspenseWrapper } from "./components/SuspenseWrapper";
-import { Witch } from "./components/Witch";
-import { FurnitureWrapper } from "./utils/furniture";
 import { Plant } from "./components/Plant";
-import { useControls } from "leva";
 
 function App() {
   return (
